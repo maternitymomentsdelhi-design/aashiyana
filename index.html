@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashiyana Welfare World | Saving Voiceless Souls</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+ 
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #fffcf9;
+            overflow-x: hidden;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+ 
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+ 
+        .hero-gradient {
+            background: linear-gradient(135deg, #ffeadb 0%, #fffcf9 100%);
+        }
+ 
+        .animal-card {
+            transition: transform 0.3s ease-out;
+            cursor: pointer;
+        }
+ 
+        .parallax-bg {
+            position: absolute;
+            z-index: -1;
+            filter: blur(60px);
+            opacity: 0.4;
+            border-radius: 50%;
+        }
+ 
+        .btn-heart {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-heart:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+        }
+ 
+        .donation-glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+ 
+        .story-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="perspective-1000">
+ 
+    <!-- Floating Background Blobs -->
+    <div class="parallax-bg w-96 h-96 bg-orange-200 top-[-10%] left-[-10%]" id="blob1"></div>
+    <div class="parallax-bg w-80 h-80 bg-red-100 bottom-[20%] right-[-5%]" id="blob2"></div>
+ 
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="1608799848942.avif" alt="Aashiyana Logo" class="w-12 h-12 object-contain rounded-full bg-white p-1 shadow-sm">
+            <div class="text-2xl font-bold text-orange-600 serif">Aashiyana</div>
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium text-gray-700">
+            <a href="#journey" class="hover:text-orange-500 transition">Our Journey</a>
+            <a href="#initiatives" class="hover:text-orange-500 transition">Initiatives</a>
+            <a href="#miracles" class="hover:text-orange-500 transition">Miracles</a>
+            <a href="#help" class="hover:text-orange-500 transition">Ways to Help</a>
+        </div>
+        <a href="tel:+918130165146" class="bg-red-500 text-white px-5 py-2 rounded-full font-bold btn-heart flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i> Emergency
+        </a>
+    </nav>
+ 
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6 hero-gradient relative pt-20">
+        <div class="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6" id="hero-text">
+                <div class="text-orange-500 font-bold tracking-widest uppercase text-sm" id="hero-subtitle">
+                    "Love has its own language"
+                </div>
+                <h1 class="text-6xl md:text-8xl font-extrabold text-gray-900 serif leading-tight">
+                    Where <span class="text-orange-500 italic">Voiceless</span> Souls Find Home.
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed max-w-lg">
+                    Established in 2020, Aashiyana Welfare World is a sanctuary dedicated to rescuing critical cases, treating fatal diseases, and providing a life of dignity to animals who have known only suffering.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#miracles" class="bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-black transition shadow-xl">See Our Miracles</a>
+                    <a href="#help" class="bg-orange-500 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-orange-600 transition shadow-xl">Support Now</a>
+                </div>
+            </div>
+            <div class="relative" id="hero-image">
+                <div class="w-full h-[500px] rounded-[3rem] overflow-hidden shadow-2xl relative group">
+                    <img src="Jack Russel.avif" alt="Rescued Animal" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 text-white">
+                        <p class="text-sm uppercase tracking-widest font-bold opacity-80">Est. 2020</p>
+                        <h3 class="text-3xl font-bold serif">Rescue Till Recovery</h3>
+                    </div>
+                </div>
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Philosophy Section -->
+    <section class="py-20 px-6 bg-white overflow-hidden relative">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <h2 class="text-4xl md:text-6xl font-bold text-gray-900 serif italic">"Importance of Every Life"</h2>
+            <p class="text-xl text-gray-600 leading-relaxed italic">
+                We believe that no life is too small to save, and no injury is too severe to treat. Every soul has the right to get life and freedom, away from the silent sufferings of the streets.
+            </p>
+            <div class="flex justify-center">
+                <div class="w-24 h-1 bg-orange-500 rounded-full"></div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Journey Section -->
+    <section id="journey" class="py-24 px-6 bg-orange-50/50">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative" id="journey-img">
+                <div class="w-full h-[600px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3 group">
+                    <img src="Dog Illustration.avif" alt="Animal Shelter" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-white p-4 rounded-3xl shadow-xl flex flex-col justify-center items-center text-center transform -rotate-6">
+                    <span class="text-4xl font-bold text-orange-600 serif">2020</span>
+                    <span class="text-sm font-bold text-gray-500 uppercase">Our Beginning</span>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <div class="inline-block px-4 py-1 bg-orange-200 text-orange-700 rounded-full text-sm font-bold uppercase tracking-widest">Our Origin</div>
+                <h2 class="text-4xl md:text-6xl font-bold text-gray-900 serif leading-tight">From A Child's Heart to a Professional Sanctuary</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    What started as a childhood instinct to feed stray puppies has blossomed into a full-scale professional rescue operation. Aashiyana is not just a shelter; it is a promise that the most neglected animals will find medical recovery and lifelong love.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    We specialize in the most critical cases—those that others might deem "unreachable." Our home is a place where pain is replaced by peace.
+                </p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Critical Care Section -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto space-y-16">
+            <div class="text-center space-y-4">
+                <h2 class="text-5xl font-bold text-gray-900 serif">Specialized Recovery Units</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Fighting the most fatal diseases with precision and care.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group p-1 rounded-[3rem] bg-gradient-to-br from-red-100 to-orange-100 shadow-inner">
+                    <div class="bg-white p-8 rounded-[2.8rem] h-full space-y-6">
+                        <div class="w-14 h-14 bg-red-500 text-white rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-12 transition">🦠</div>
+                        <h3 class="text-3xl font-bold serif text-gray-900">Parvovirus Isolation</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Parvo is a death sentence for many puppies. We have created a specialized "Recovery Zone" to isolate infected puppies, giving them the intensive care and supplements needed to fight back and survive.
+                        </p>
+                    </div>
+                </div>
+                <div class="group p-1 rounded-[3rem] bg-gradient-to-br from-blue-100 to-indigo-100 shadow-inner">
+                    <div class="bg-white p-8 rounded-[2.8rem] h-full space-y-6">
+                        <div class="w-14 h-14 bg-blue-500 text-white rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-12 transition">🩺</div>
+                        <h3 class="text-3xl font-bold serif text-gray-900">Critical Medical Care</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            From treating severe maggot infections and TVT tumors to rehabilitating paralyzed animals, our medical wing focuses on "Rescue Till Recovery."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Initiatives Section -->
+    <section id="initiatives" class="py-24 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-5xl font-bold text-gray-900 serif">Our Core Initiatives</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Building a sustainable world where humans and animals coexist in harmony.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition">✂️</div>
+                    <h3 class="text-2xl font-bold serif">Sterilization</h3>
+                    <p class="text-gray-500 leading-relaxed">Preventing the birth of thousands of stray animals into a life of suffering. We have successfully spayed 400-500 animals to control the population.</p>
+                </div>
+                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition">💉</div>
+                    <h3 class="text-2xl font-bold serif">Vaccinations</h3>
+                    <p class="text-gray-500 leading-relaxed">Our "Anti Rabies 9 in 1" vaccination drives protect whole communities from fatal diseases and ensure a healthier stray population.</p>
+                </div>
+                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition">🐕</div>
+                    <h3 class="text-2xl font-bold serif">Indie Adoption</h3>
+                    <p class="text-gray-500 leading-relaxed">We champion the beauty of "Indies." We advocate for the adoption of abandoned dogs and cats, giving them the forever homes they deserve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Miracles Section -->
+    <section id="miracles" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-5xl font-bold text-gray-900 serif mb-4">The Wall of Miracles</h2>
+                    <p class="text-gray-600 text-lg">These are not just animals; they are survivors. Every story is a victory over pain.</p>
+                </div>
+                <div class="text-orange-600 font-bold cursor-pointer hover:underline">View Full Archive →</div>
+            </div>
+ 
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="gallery">
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group">
+                    <img src="Untitled (1).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-bold serif">Blessy</h3>
+                            <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">
+                                Overcame a cancerous tumor and TVT. A symbol of hope.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group">
+                    <img src="Untitled (2).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-bold serif">Willy</h3>
+                            <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">
+                                Missing a lower jaw, but possessing a heart of gold.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group">
+                    <img src="Untitled (3).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-bold serif">Jimmy</h3>
+                            <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">
+                                14 years old and blind. He now sees the world through our love.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group">
+                    <img src="Untitled (4).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-bold serif">Naina</h3>
+                            <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">
+                                Rescued from severe starvation. A little love goes a long way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group">
+                    <img src="Untitled (5).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-bold serif">Sherry</h3>
+                            <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">
+                                Rescued from Chandni Chowk with head and eye injuries.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group">
+                    <img src="Untitled (6).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-bold serif">Mumtaz</h3>
+                            <p class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed">
+                                A brave mother dog fighting cancer and mange.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Help Section -->
+    <section id="help" class="py-24 px-6 bg-orange-50 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto donation-glass rounded-[3rem] p-12 text-center space-y-8 relative z-10">
+            <div class="inline-block px-4 py-1 bg-red-100 text-red-600 rounded-full text-sm font-bold uppercase tracking-widest">Ways to Help 🐾</div>
+            <h2 class="text-4xl md:text-6xl font-bold text-gray-900 serif">Be a Member of Aashiyana</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Whether it's through financial support, donating food, or volunteering your time—your help collects blessings and saves lives. Every rupee supports vet bills, surgeries, and nutrition.
+            </p>
+ 
+            <div class="grid md:grid-cols-2 gap-6 mt-12">
+                <div class="p-6 bg-white rounded-3xl border border-gray-100 text-left space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 text-orange-600 font-bold uppercase text-xs tracking-widest">
+                        <i class="fa-solid fa-bolt"></i> Quick UPI / GPay
+                    </div>
+                    <p class="text-2xl font-mono font-bold text-gray-800">+91 8130165146</p>
+                    <p class="text-sm text-gray-400">Instant support for medical emergencies</p>
+                </div>
+                <div class="p-6 bg-white rounded-3xl border border-gray-100 text-left space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 text-blue-600 font-bold uppercase text-xs tracking-widest">
+                        <i class="fa-solid fa-building-columns"></i> Bank Transfer
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-sm font-bold text-gray-800">Account: <span class="font-mono">40000976517</span></p>
+                        <p class="text-sm font-bold text-gray-800">IFSC: <span class="font-mono">SBIN0031332</span></p>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a href="https://milaap.org/fundraisers/support-chanu" class="bg-gray-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-black transition shadow-2xl">
+                    Visit Milaap Fundraiser
+                </a>
+                <a href="https://wa.me/9318494313" class="bg-green-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-green-700 transition shadow-2xl">
+                    WhatsApp for Donation
+                </a>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Contact & Visit Section -->
+    <section id="visit" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-5xl font-bold text-gray-900 serif">Visit Aashiyana</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="space-y-1">
+                            <p class="font-bold text-gray-800">Location</p>
+                            <p class="text-gray-600">Karol Bagh Faiz Road, New Delhi 110005 <br><span class="text-sm text-orange-500">(Visits by prior appointment)</span></p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center shrink-0"><i class="fa-solid fa-clock"></i></div>
+                        <div class="space-y-1">
+                            <p class="font-bold text-gray-800">Emergency Hours</p>
+                            <p class="text-gray-600">Open 24 Hours for animal rescue and emergency care.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="space-y-1">
+                            <p class="font-bold text-gray-800">Digital Reach</p>
+                            <p class="text-gray-600">aashiyanabycsbajaj3414@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[400px] rounded-[3rem] overflow-hidden relative shadow-inner">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.3!2d77.1897!3d28.6448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d029c7b3a1a1b%3A0x1a2b3c4d5e6f7a8b!2sFaiz%20Rd%2C%20Karol%20Bagh%2C%20New%20Delhi%2C%20Delhi%20110005!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h3 class="text-3xl font-bold serif mb-2">Aashiyana Welfare World</h3>
+                <p class="text-gray-400">Saving lives, one soul at a time. Est. 2020</p>
+            </div>
+            <div class="flex gap-6 text-2xl">
+                <a href="https://instagram.com/aashiyana_welfareworld" class="hover:text-orange-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/chanu.singh" class="hover:text-orange-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/9318494313" class="hover:text-orange-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="text-gray-500 text-sm">
+                &copy; 2026 Aashiyana Welfare World.
+            </div>
+        </div>
+    </footer>
+ 
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+ 
+        gsap.from("#hero-text h1", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power4.out"
+        });
+        gsap.from("#hero-text p", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.3,
+            ease: "power4.out"
+        });
+        gsap.from("#hero-subtitle", {
+            opacity: 0,
+            x: -20,
+            duration: 1,
+            delay: 0.1,
+            ease: "power4.out"
+        });
+        gsap.from("#hero-image", {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1.2,
+            delay: 0.5,
+            ease: "elastic.out(1, 0.75)"
+        });
+ 
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const xPos = (clientX / window.innerWidth) - 0.5;
+            const yPos = (clientY / window.innerHeight) - 0.5;
+ 
+            gsap.to("#blob1", { x: xPos * 50, y: yPos * 50, duration: 1 });
+            gsap.to("#blob2", { x: -xPos * 60, y: -yPos * 60, duration: 1 });
+ 
+            document.querySelectorAll('.animal-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardX = (clientX - rect.left) / rect.width - 0.5;
+                const cardY = (clientY - rect.top) / rect.height - 0.5;
+                gsap.to(card, {
+                    rotateX: -cardY * 10,
+                    rotateY: cardX * 10,
+                    duration: 0.5
+                });
+            });
+        });
+ 
+        gsap.from("#gallery .animal-card", {
+            scrollTrigger: { trigger: "#gallery", start: "top 80%" },
+            opacity: 0,
+            y: 100,
+            stagger: 0.2,
+            duration: 1,
+            ease: "power3.out"
+        });
+    </script>
+</body>
+</html>
