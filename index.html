@@ -74,10 +74,50 @@
             <div class="text-2xl font-bold text-orange-600 serif">Aashiyana</div>
         </div>
         <div class="hidden md:flex space-x-8 font-medium text-gray-700">
-            <a href="#journey" class="hover:text-orange-500 transition">Our Journey</a>
-            <a href="#initiatives" class="hover:text-orange-500 transition">Initiatives</a>
-            <a href="#miracles" class="hover:text-orange-500 transition">Miracles</a>
-            <a href="#help" class="hover:text-orange-500 transition">Ways to Help</a>
+            <div class="relative">
+                <button onclick="toggleDropdown('dd-journey', this)" class="hover:text-orange-500 transition flex items-center gap-1">
+                    Our Journey <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+                <div id="dd-journey" class="dropdown-menu hidden absolute top-full left-0 mt-3 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 min-w-[220px] z-50">
+                    <a href="#journey" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Our Origin</a>
+                    <a href="#philosophy" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Our Philosophy</a>
+                </div>
+            </div>
+            <div class="relative">
+                <button onclick="toggleDropdown('dd-initiatives', this)" class="hover:text-orange-500 transition flex items-center gap-1">
+                    Initiatives <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+                <div id="dd-initiatives" class="dropdown-menu hidden absolute top-full left-0 mt-3 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 min-w-[220px] z-50">
+                    <a href="#parvo-care" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Parvovirus Isolation</a>
+                    <a href="#medical-care" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Critical Medical Care</a>
+                    <a href="#sterilization" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Sterilization</a>
+                    <a href="#vaccinations" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Vaccinations</a>
+                    <a href="#indie-adoption" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Indie Adoption</a>
+                </div>
+            </div>
+            <div class="relative">
+                <button onclick="toggleDropdown('dd-miracles', this)" class="hover:text-orange-500 transition flex items-center gap-1">
+                    Miracles <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+                <div id="dd-miracles" class="dropdown-menu hidden absolute top-full left-0 mt-3 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 min-w-[180px] z-50">
+                    <a href="#story-blessy" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Blessy</a>
+                    <a href="#story-willy" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Willy</a>
+                    <a href="#story-jimmy" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Jimmy</a>
+                    <a href="#story-naina" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Naina</a>
+                    <a href="#story-sherry" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Sherry</a>
+                    <a href="#story-mumtaz" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Mumtaz</a>
+                </div>
+            </div>
+            <div class="relative">
+                <button onclick="toggleDropdown('dd-help', this)" class="hover:text-orange-500 transition flex items-center gap-1">
+                    Ways to Help <i class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+                <div id="dd-help" class="dropdown-menu hidden absolute top-full left-0 mt-3 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 min-w-[200px] z-50">
+                    <a href="#upi-donate" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">UPI / GPay</a>
+                    <a href="#bank-transfer" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Bank Transfer</a>
+                    <a href="#visit" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Visit Us</a>
+                </div>
+            </div>
         </div>
         <a href="tel:+918130165146" class="bg-red-500 text-white px-5 py-2 rounded-full font-bold btn-heart flex items-center gap-2">
             <i class="fa-solid fa-phone"></i> Emergency
@@ -104,7 +144,7 @@
     </section>
  
     <!-- Philosophy Section -->
-    <section class="py-20 px-6 bg-white overflow-hidden relative">
+    <section id="philosophy" class="py-20 px-6 bg-white overflow-hidden relative">
         <div class="max-w-4xl mx-auto text-center space-y-8">
             <h2 class="text-4xl md:text-6xl font-bold text-gray-900 serif italic">"Importance of Every Life"</h2>
             <p class="text-xl text-gray-600 leading-relaxed italic">
@@ -139,7 +179,7 @@
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">Fighting the most fatal diseases with precision and care.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-12">
-                <div class="group p-1 rounded-[3rem] bg-gradient-to-br from-red-100 to-orange-100 shadow-inner">
+                <div class="group p-1 rounded-[3rem] bg-gradient-to-br from-red-100 to-orange-100 shadow-inner" id="parvo-care">
                     <div class="bg-white p-8 rounded-[2.8rem] h-full space-y-6">
                         <div class="w-14 h-14 bg-red-500 text-white rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-12 transition">🦠</div>
                         <h3 class="text-3xl font-bold serif text-gray-900">Parvovirus Isolation</h3>
@@ -148,7 +188,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="group p-1 rounded-[3rem] bg-gradient-to-br from-blue-100 to-indigo-100 shadow-inner">
+                <div class="group p-1 rounded-[3rem] bg-gradient-to-br from-blue-100 to-indigo-100 shadow-inner" id="medical-care">
                     <div class="bg-white p-8 rounded-[2.8rem] h-full space-y-6">
                         <div class="w-14 h-14 bg-blue-500 text-white rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-12 transition">🩺</div>
                         <h3 class="text-3xl font-bold serif text-gray-900">Critical Medical Care</h3>
@@ -169,18 +209,15 @@
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">Building a sustainable world where humans and animals coexist in harmony.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-10">
-                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group">
-                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition">✂️</div>
+                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group" id="sterilization">
                     <h3 class="text-2xl font-bold serif">Sterilization</h3>
                     <p class="text-gray-500 leading-relaxed">Preventing the birth of thousands of stray animals into a life of suffering. We have successfully spayed 400-500 animals to control the population.</p>
                 </div>
-                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group">
-                    <div class="w-16 h-16 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition">💉</div>
+                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group" id="vaccinations">
                     <h3 class="text-2xl font-bold serif">Vaccinations</h3>
                     <p class="text-gray-500 leading-relaxed">Our "Anti Rabies 9 in 1" vaccination drives protect whole communities from fatal diseases and ensure a healthier stray population.</p>
                 </div>
-                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group">
-                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition">🐕</div>
+                <div class="p-10 rounded-3xl bg-white shadow-sm border border-gray-100 space-y-6 hover:shadow-xl transition-all group" id="indie-adoption">
                     <h3 class="text-2xl font-bold serif">Indie Adoption</h3>
                     <p class="text-gray-500 leading-relaxed">We champion the beauty of "Indies." We advocate for the adoption of abandoned dogs and cats, giving them the forever homes they deserve.</p>
                 </div>
@@ -200,7 +237,7 @@
             </div>
  
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="gallery">
-                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer"
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-blessy"
                      onclick="openStory('Blessy', this)"
                      data-story="Blessy was found suffering from a cancerous tumor known as TVT, a condition that causes severe internal bleeding and pain if left untreated. Cases like hers are often considered too difficult to take on, but our team committed to her treatment over the following weeks. Through consistent medical attention and patience, she slowly recovered, and today stands as one of our most inspiring stories.">
                     <img src="Untitled (1).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -211,7 +248,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer"
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-willy"
                      onclick="openStory('Willy', this)"
                      data-story="Willy was born missing his lower jaw, a physical difference that often makes animals the hardest to place. But his playful, loving personality told a different story. Aashiyana welcomed him in and gave him a permanent home, where he's loved exactly as he is, proof that a dog's worth has nothing to do with how he looks.">
                     <img src="Untitled (2).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -222,7 +259,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer"
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-jimmy"
                      onclick="openStory('Jimmy', this)"
                      data-story="After fourteen years with the same family, Jimmy was abandoned on the road once his needs became too much for them. Completely blind, he had suffered a deep wound from an accident he couldn't see coming. A kind passerby reached out for help, and after treatment and a full health check, Jimmy now lives permanently with us, spending his remaining years in safety and love.">
                     <img src="Untitled (3).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -233,7 +270,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer"
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-naina"
                      onclick="openStory('Naina', this)"
                      data-story="At fourteen years old, this Pomeranian had spent her entire life with one family, only to be left to starve while the people around her did nothing. By the time help arrived, she carried a tumor, multiple wounds, and a body weakened from prolonged suffering. With support from local authorities, our team stepped in, and Naina is now receiving the care and comfort she was denied for years.">
                     <img src="Untitled (4).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -244,7 +281,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer"
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-sherry"
                      onclick="openStory('Sherry', this)"
                      data-story="Sherry was picked up from Chandni Chowk with a deep wound on his head and a badly swollen, infected eye, with clear signs that someone had deliberately hurt him. He was taken straight to a clinic where the full extent of his injuries was treated. Following our 'Rescue till Recovery' approach, Sherry made a complete recovery and is now a healthy, handsome reminder of how far compassion can go.">
                     <img src="Untitled (5).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -255,7 +292,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer"
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-mumtaz"
                      onclick="openStory('Mumtaz', this)"
                      data-story="Mumtaz had recently given birth to four puppies when people in a nearby park cruelly killed them, leaving her grieving and alone. On top of that, she herself was found with a tumor, ticks, fleas, and several untreated wounds. When our team found her, she was crying out in pain. She's now under our care, receiving treatment step by step, finally experiencing safety and gentleness.">
                     <img src="Untitled (6).avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
@@ -291,14 +328,14 @@
             </p>
  
             <div class="grid md:grid-cols-2 gap-6 mt-12">
-                <div class="p-6 bg-white rounded-3xl border border-gray-100 text-left space-y-4 shadow-sm">
+                <div class="p-6 bg-white rounded-3xl border border-gray-100 text-left space-y-4 shadow-sm" id="upi-donate">
                     <div class="flex items-center gap-3 text-orange-600 font-bold uppercase text-xs tracking-widest">
                         <i class="fa-solid fa-bolt"></i> Quick UPI / GPay
                     </div>
                     <p class="text-2xl font-mono font-bold text-gray-800">+91 8130165146</p>
                     <p class="text-sm text-gray-400">Instant support for medical emergencies</p>
                 </div>
-                <div class="p-6 bg-white rounded-3xl border border-gray-100 text-left space-y-4 shadow-sm">
+                <div class="p-6 bg-white rounded-3xl border border-gray-100 text-left space-y-4 shadow-sm" id="bank-transfer">
                     <div class="flex items-center gap-3 text-blue-600 font-bold uppercase text-xs tracking-widest">
                         <i class="fa-solid fa-building-columns"></i> Bank Transfer
                     </div>
@@ -382,6 +419,19 @@
     </footer>
  
     <script>
+        function toggleDropdown(id, btn) {
+            const menu = document.getElementById(id);
+            const isOpen = !menu.classList.contains('hidden');
+            closeDropdowns();
+            if (!isOpen) menu.classList.remove('hidden');
+        }
+        function closeDropdowns() {
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+        }
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav .relative')) closeDropdowns();
+        });
+
         function openStory(name, el) {
             document.getElementById('story-modal-title').textContent = name;
             document.getElementById('story-modal-text').textContent = el.getAttribute('data-story');
