@@ -86,32 +86,19 @@
  
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center px-6 hero-gradient relative pt-20">
-        <div class="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+        <div class="max-w-4xl w-full text-center">
             <div class="space-y-6" id="hero-text">
-                <div class="text-orange-500 font-bold tracking-widest uppercase text-sm" id="hero-subtitle">
-                    "Love has its own language"
-                </div>
                 <h1 class="text-6xl md:text-8xl font-extrabold text-gray-900 serif leading-tight">
                     Where <span class="text-orange-500 italic">Voiceless</span> Souls Find Home.
                 </h1>
                 <p class="text-lg text-gray-600 leading-relaxed max-w-lg">
                     Established in 2020, Aashiyana Welfare World is a sanctuary dedicated to rescuing critical cases, treating fatal diseases, and providing a life of dignity to animals who have known only suffering.
                 </p>
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-4 justify-center">
                     <a href="#miracles" class="bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-black transition shadow-xl">See Our Miracles</a>
                     <a href="#help" class="bg-orange-500 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-orange-600 transition shadow-xl">Support Now</a>
                 </div>
-            </div>
-            <div class="relative" id="hero-image">
-                <div class="w-full h-[500px] rounded-[3rem] overflow-hidden shadow-2xl relative group">
-                    <img src="Jack Russel.avif" alt="Rescued Animal" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 text-white">
-                        <p class="text-sm uppercase tracking-widest font-bold opacity-80">Est. 2020</p>
-                        <h3 class="text-3xl font-bold serif">Rescue Till Recovery</h3>
-                    </div>
-                </div>
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+                <p class="text-sm uppercase tracking-widest font-bold text-orange-500 opacity-80">Est. 2020</p>
             </div>
         </div>
     </section>
@@ -131,18 +118,8 @@
  
     <!-- Journey Section -->
     <section id="journey" class="py-24 px-6 bg-orange-50/50">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="relative" id="journey-img">
-                <div class="w-full h-[600px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3 group">
-                    <img src="Dog Illustration.avif" alt="Animal Shelter" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-white p-4 rounded-3xl shadow-xl flex flex-col justify-center items-center text-center transform -rotate-6">
-                    <span class="text-4xl font-bold text-orange-600 serif">2020</span>
-                    <span class="text-sm font-bold text-gray-500 uppercase">Our Beginning</span>
-                </div>
-            </div>
+        <div class="max-w-4xl mx-auto text-center">
             <div class="space-y-6">
-                <div class="inline-block px-4 py-1 bg-orange-200 text-orange-700 rounded-full text-sm font-bold uppercase tracking-widest">Our Origin</div>
                 <h2 class="text-4xl md:text-6xl font-bold text-gray-900 serif leading-tight">From A Child's Heart to a Professional Sanctuary</h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
                     What started as a childhood instinct to feed stray puppies has blossomed into a full-scale professional rescue operation. Aashiyana is not just a shelter; it is a promise that the most neglected animals will find medical recovery and lifelong love.
@@ -415,13 +392,6 @@
             duration: 1,
             delay: 0.1,
             ease: "power4.out"
-        });
-        gsap.from("#hero-image", {
-            opacity: 0,
-            scale: 0.8,
-            duration: 1.2,
-            delay: 0.5,
-            ease: "elastic.out(1, 0.75)"
         });
  
         window.addEventListener('mousemove', (e) => {
