@@ -59,9 +59,19 @@
         .story-overlay {
             background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
         }
+
+        /* Preloader stays centered, gif handles its own animation */
     </style>
 </head>
 <body class="perspective-1000">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#fffcf9]">
+        <div class="relative w-40 h-40 mb-4 flex items-center justify-center">
+            <img src="running-dog.gif" alt="Running dog" class="w-40 h-40 object-contain">
+        </div>
+        <div class="text-orange-600 font-bold tracking-widest uppercase text-sm serif">Aashiyana Welfare World</div>
+    </div>
  
     <!-- Floating Background Blobs -->
     <div class="parallax-bg w-96 h-96 bg-orange-200 top-[-10%] left-[-10%]" id="blob1"></div>
@@ -419,6 +429,18 @@
     </footer>
  
     <script>
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            const minDisplay = 3000; // milliseconds
+            const elapsed = performance.now();
+            const remaining = Math.max(0, minDisplay - elapsed);
+            setTimeout(() => {
+                preloader.style.transition = 'opacity 0.6s ease';
+                preloader.style.opacity = '0';
+                setTimeout(() => preloader.remove(), 600);
+            }, remaining);
+        });
+
         function toggleDropdown(id, btn) {
             const menu = document.getElementById(id);
             const isOpen = !menu.classList.contains('hidden');
