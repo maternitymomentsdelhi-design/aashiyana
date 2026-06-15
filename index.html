@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,29 +11,29 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
- 
+
         body {
             font-family: 'Outfit', sans-serif;
             background-color: #fffcf9;
             overflow-x: hidden;
         }
         .serif { font-family: 'Playfair Display', serif; }
- 
+
         .glass-nav {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
- 
+
         .hero-gradient {
             background: linear-gradient(135deg, #ffeadb 0%, #fffcf9 100%);
         }
- 
+
         .animal-card {
             transition: transform 0.3s ease-out;
             cursor: pointer;
         }
- 
+
         .parallax-bg {
             position: absolute;
             z-index: -1;
@@ -40,7 +41,7 @@
             opacity: 0.4;
             border-radius: 50%;
         }
- 
+
         .btn-heart {
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -48,19 +49,47 @@
             transform: scale(1.1);
             box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
         }
- 
+
         .donation-glass {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
- 
+
         .story-overlay {
             background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
         }
 
-        /* Preloader stays centered, gif handles its own animation */
+        .typewriter h2,
+        .typewriter p {
+           animation-play-state: paused;
+        }
+        .typewriter h2 {
+           display: inline-block;
+           overflow: hidden;
+           border-right: .15em solid orange;
+           white-space: nowrap;
+           margin: 0 auto;
+           letter-spacing: .15em;
+           animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        .typewriter p {
+           overflow: hidden;
+           animation: typing-paragraph 4s steps(80, end);
+        }
+        @keyframes typing {
+           from { width: 0 }
+           to { width: 100% }
+        }
+        @keyframes typing-paragraph {
+           from { clip-path: inset(0 100% 0 0); }
+           to { clip-path: inset(0 0% 0 0); }
+        }
+        @keyframes blink-caret {
+           from, to { border-color: transparent }
+           50% { border-color: orange; }
+        }
     </style>
 </head>
 <body class="perspective-1000">
@@ -117,6 +146,7 @@
                     <a href="#story-willy" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Willy</a>
                     <a href="#story-chameli" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Chameli</a>
                     <a href="#story-naina" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Naina</a>
+                    <a href="#story-bullet" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Bullet</a>
                     <a href="#story-sherry" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Sherry</a>
                     <a href="#story-mumtaz" onclick="closeDropdowns()" class="block px-5 py-2 hover:bg-orange-50 hover:text-orange-600 transition">Mumtaz</a>
                 </div>
@@ -173,20 +203,26 @@
     <!-- Founder Section -->
     <section id="founder" class="py-24 px-6 bg-orange-50/50">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="relative">
+            <div class="relative overflow-hidden rounded-[3rem]" id="founder-image">
                 <div class="w-full h-[450px] rounded-[3rem] overflow-hidden shadow-2xl">
                     <img src="chanu.avif" alt="Chanu Bajaj, Founder" class="w-full h-full object-cover">
                 </div>
             </div>
-            <div class="space-y-6">
+            <div class="space-y-6 overflow-hidden" id="founder-text">
                 <div class="inline-block px-4 py-1 bg-orange-200 text-orange-700 rounded-full text-sm font-bold uppercase tracking-widest">About the Founder</div>
-                <h2 class="text-4xl md:text-6xl font-bold text-gray-900 serif leading-tight">Meet Chanu Bajaj</h2>
+                <div class="typewriter">
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 serif leading-tight">Meet Chanu Bajaj</h2>
+                </div>
+                <div class="typewriter">
                 <p class="text-lg text-gray-600 leading-relaxed">
                     Chanu Bajaj founded Aashiyana with a simple but powerful mission: a world where animals are treated with the respect and care they deserve, free from cruelty and neglect. Alongside her team, she works tirelessly to rescue and treat animals in critical condition, provide them with food and shelter, and raise awareness through community education.
                 </p>
+                </div>
+                <div class="typewriter">
                 <p class="text-lg text-gray-600 leading-relaxed">
                     Her long-term dream is to build a sanctuary where rescued animals can live out their lives in peace and happiness, surrounded by the care they were once denied.
                 </p>
+                </div>
             </div>
         </div>
     </section>
@@ -226,7 +262,15 @@
                 </div>
                 <div class="rounded-3xl bg-white shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group" id="vet-services">
                     <div class="h-48 overflow-hidden">
-                        <img src="Untitled (8).avif" alt="Veterinary Services" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="grid grid-cols-4 h-full group-hover:scale-110 transition duration-500">
+                            <img src="treatment-1.png" alt="Treatment" class="w-full h-full object-cover">
+                            <img src="treatment-2.png" alt="Treatment" class="w-full h-full object-cover">
+                            <img src="treatment-3.png" alt="Treatment" class="w-full h-full object-cover">
+                            <img src="treatment-4.png" alt="Treatment" class="w-full h-full object-cover">
+                            <img src="treatment-5.png" alt="Treatment" class="w-full h-full object-cover">
+                            <img src="treatment-6.png" alt="Treatment" class="w-full h-full object-cover">
+                            <img src="treatment-7.png" alt="Treatment" class="w-full h-full object-cover col-span-2">
+                        </div>
                     </div>
                     <div class="p-8 space-y-3">
                         <h3 class="text-2xl font-bold serif">Veterinary Services</h3>
@@ -235,7 +279,7 @@
                 </div>
                 <div class="rounded-3xl bg-white shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group" id="fostering-adoption">
                     <div class="h-48 overflow-hidden">
-                        <img src="Untitled (9).avif" alt="Fostering and Adoption" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="treatment-2.png" alt="Fostering and Adoption" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-8 space-y-3">
                         <h3 class="text-2xl font-bold serif">Fostering & Adoption</h3>
@@ -352,7 +396,7 @@
                 <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-chameli"
                      onclick="openStory('Chameli', this)"
                      data-story="Chameli was picked up from Tank Road with a severe maggot infestation around her neck. The wounds were deep and infected, and she was in visible distress when found. Our team quickly placed her on IV fluids and antibiotics to fight the infection. Despite the pain, she showed incredible will to survive. With regular wound cleaning, medication, and round-the-clock care, Chameli slowly began to heal and find comfort.">
-                    <img src="chameli.avif" class="w-full h-full object-cover transition duration-700">
+                    <img src="Untitled (8).avif" class="w-full h-full object-cover transition duration-700">
                     <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
                         <div class="space-y-2">
                             <h3 class="text-3xl font-bold serif">Chameli</h3>
@@ -371,10 +415,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-bullet"
+                     onclick="openStory('Bullet', this)"
+                     data-story="Bullet lost his legs in a train accident.">
+                    <img src="Untitled (5).avif" class="w-full h-full object-cover transition duration-700">
+                    <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-bold serif">Bullet</h3>
+                            <p class="text-sm uppercase tracking-widest font-bold opacity-80">Tap to read his story</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-sherry"
                      onclick="openStory('Sherry', this)"
                      data-story="Sherry was picked up from Chandni Chowk with a deep wound on his head and a badly swollen, infected eye, with clear signs that someone had deliberately hurt him. He was taken straight to a clinic where the full extent of his injuries was treated. Following our 'Rescue till Recovery' approach, Sherry made a complete recovery and is now a healthy, handsome reminder of how far compassion can go.">
-                    <img src="Untitled (5).avif" class="w-full h-full object-cover transition duration-700">
+                    <img src="Untitled (9).avif" class="w-full h-full object-cover transition duration-700">
                     <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
                         <div class="space-y-2">
                             <h3 class="text-3xl font-bold serif">Sherry</h3>
@@ -385,7 +440,7 @@
                 <div class="animal-card relative h-[480px] rounded-[2rem] overflow-hidden shadow-xl group cursor-pointer" id="story-mumtaz"
                      onclick="openStory('Mumtaz', this)"
                      data-story="Mumtaz had recently given birth to four puppies when people in a nearby park cruelly killed them, leaving her grieving and alone. On top of that, she herself was found with a tumor, ticks, fleas, and several untreated wounds. When our team found her, she was crying out in pain. She's now under our care, receiving treatment step by step, finally experiencing safety and gentleness.">
-                    <img src="Untitled (6).avif" class="w-full h-full object-cover transition duration-700">
+                    <img src="Untitled (10).avif" class="w-full h-full object-cover transition duration-700">
                     <div class="absolute inset-0 story-overlay flex items-end p-8 text-white">
                         <div class="space-y-2">
                             <h3 class="text-3xl font-bold serif">Mumtaz</h3>
@@ -461,7 +516,10 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="rounded-3xl bg-orange-50 shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group" id="cause-medication">
                     <div class="h-40 overflow-hidden">
-                        <img src="Untitled (10).avif" alt="Donate for Medication" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="grid grid-cols-2 h-full group-hover:scale-110 transition duration-500">
+                            <img src="medication-1.jpeg" alt="Medication" class="w-full h-full object-cover">
+                            <img src="medication-2.png" alt="Medication" class="w-full h-full object-cover">
+                        </div>
                     </div>
                     <div class="p-6 space-y-2">
                         <h3 class="text-xl font-bold serif">Medication</h3>
@@ -470,7 +528,10 @@
                 </div>
                 <div class="rounded-3xl bg-orange-50 shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group" id="cause-food">
                     <div class="h-40 overflow-hidden">
-                        <img src="Untitled (11).avif" alt="Donate for Food" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="grid grid-cols-2 h-full group-hover:scale-110 transition duration-500">
+                            <img src="food-1.png" alt="Food" class="w-full h-full object-cover">
+                            <img src="food-2.png" alt="Food" class="w-full h-full object-cover">
+                        </div>
                     </div>
                     <div class="p-6 space-y-2">
                         <h3 class="text-xl font-bold serif">Food</h3>
@@ -488,7 +549,7 @@
                 </div>
                 <div class="rounded-3xl bg-orange-50 shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group" id="cause-sterilization">
                     <div class="h-40 overflow-hidden">
-                        <img src="Untitled (13).avif" alt="Donate for Sterilization" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="vaccination-1.png" alt="Sterilization" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-6 space-y-2">
                         <h3 class="text-xl font-bold serif">Sterilization</h3>
@@ -621,6 +682,31 @@
             delay: 0.1,
             ease: "power4.out"
         });
+
+        gsap.from("#founder-image", {
+            scrollTrigger: {
+                trigger: "#founder",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 120,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from("#founder-text > *", {
+            scrollTrigger: {
+                trigger: "#founder",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 60,
+            stagger: 0.15,
+            duration: 0.8,
+            ease: "power3.out"
+        });
  
         window.addEventListener('mousemove', (e) => {
             const { clientX, clientY } = e;
@@ -650,6 +736,19 @@
             duration: 1,
             ease: "power3.out"
         });
+        
+        const typewriterEls = document.querySelectorAll('.typewriter h2, .typewriter p');
+        if (typewriterEls.length) {
+            const twObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        twObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            typewriterEls.forEach(el => twObserver.observe(el));
+        }
     </script>
 </body>
 </html>
